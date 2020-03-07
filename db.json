@@ -1,0 +1,47 @@
+{
+  "logs": [
+    {
+      "id": 1,
+      "message": "Changed hard drive on Work Station 005",
+      "attention": false,
+      "date": "03-02-2019",
+      "tech": "Sam Smith"
+    },
+    {
+      "id": 2,
+      "message": "Changed Router to new ",
+      "attention": true,
+      "date": "03-12-2019",
+      "tech": "John Doe"
+    },
+    {
+      "id": 3,
+      "message": "Swapped monitor on workstation 010",
+      "attention": false,
+      "date": "03-02-2019",
+      "tech": "John Lewis"
+    }
+  ],
+  "techs": [
+    {
+      "id": 1,
+      "firstName": "John",
+      "lastName": "Doe"
+    },
+    {
+      "id": 2,
+      "firstName": "Sam",
+      "lastName": "Smith"
+    },
+    {
+      "id": 3,
+      "firstName": "John",
+      "lastName": "Lewis"
+    },
+    {
+      "firstName": "Irakoze",
+      "lastName": "Orchide",
+      "id": 4
+    }
+  ]
+}
