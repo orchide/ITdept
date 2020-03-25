@@ -1,25 +1,18 @@
 {
   "logs": [
     {
-      "id": 1,
-      "message": "Changed hard drive on Work Station 005",
+      "message": "fixed the iMac on statio 19",
+      "tech": "John Doe",
       "attention": false,
-      "date": "03-02-2019",
-      "tech": "Sam Smith"
+      "date": "2020-03-25T20:53:17.120Z",
+      "id": 4
     },
     {
-      "id": 2,
-      "message": "Changed Router to new ",
+      "message": "New PC in house",
+      "tech": "Irakoze Orchide",
       "attention": true,
-      "date": "03-12-2019",
-      "tech": "John Doe"
-    },
-    {
-      "id": 3,
-      "message": "Swapped monitor on workstation 010",
-      "attention": false,
-      "date": "03-02-2019",
-      "tech": "John Lewis"
+      "date": "2020-03-25T22:31:13.627Z",
+      "id": 5
     }
   ],
   "techs": [

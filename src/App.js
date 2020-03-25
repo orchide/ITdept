@@ -1,6 +1,8 @@
 import React,{useEffect, Fragment} from 'react';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js'; 
+import store from './store';
+import { Provider } from 'react-redux';
 import './App.css';
 
 
@@ -15,9 +17,10 @@ import TechListModal from './Components/Layout/Techs/TechListModal'
 const App = () => {
   // this is for Init Materialse JS
   useEffect(() =>{
-    M.AutoInit()
+    M.AutoInit();
   })
   return (
+    <Provider store={store}>
     <Fragment >
       <SearchBar/>
       <div className="container">
@@ -29,6 +32,7 @@ const App = () => {
         <EditLogModal />
       </div>
     </Fragment>
+    </Provider>
   );
 }
 
