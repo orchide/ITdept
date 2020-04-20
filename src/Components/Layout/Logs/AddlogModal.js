@@ -1,33 +1,33 @@
-import React, { useState } from "react";
-import M from "materialize-css/dist/js/materialize.min.js";
+import TechOptions from '../../Layout/TechOptions';
+
+import React, { useState } from 'react';
+import M from 'materialize-css/dist/js/materialize.min.js';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import {addLog} from '../../../Actions/LogActions';
-
+import { addLog } from '../../../Actions/LogActions';
 
 const AddlogModal = ({ addLog }) => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
-  const [tech, setTech] = useState("");
+  const [tech, setTech] = useState('');
 
   const onSubmit = () => {
-    if (message === "" || tech === "") {
-      M.toast({ html: "Please Enter a message and Tech" });
+    if (message === '' || tech === '') {
+      M.toast({ html: 'Please Enter a message and Tech' });
     } else {
       const newLg = {
         message,
         tech,
         attention,
-        date: new Date()
-      }
+        date: new Date(),
+      };
 
       addLog(newLg);
-      M.toast({ html : `Ticket posted by ${tech}` })
+      M.toast({ html: `Ticket posted by ${tech}` });
 
-      setMessage('')
-      setAttention(false)
-      setTech('')
-      
+      setMessage('');
+      setAttention(false);
+      setTech('');
     }
   };
 
@@ -41,7 +41,7 @@ const AddlogModal = ({ addLog }) => {
               type="text"
               name="message"
               value={message}
-              onChange={e => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
             />
             <label htmlFor="message" className="active">
               Log Message
@@ -54,15 +54,12 @@ const AddlogModal = ({ addLog }) => {
               name="tech"
               value={tech}
               className="browser-default"
-              onChange={e => setTech(e.target.value)}
+              onChange={(e) => setTech(e.target.value)}
             >
               <option value="" disabled>
                 Select Technician
               </option>
-              <option value="John Doe">John Doe</option>
-              <option value="Sam Smith">Sam Smith</option>
-              <option value="Irakoze Orchide">Irakoze Orchide</option>
-              <option value="John Lewis">John Lewis</option>
+              <TechOptions />
             </select>
           </div>
         </div>
@@ -75,7 +72,7 @@ const AddlogModal = ({ addLog }) => {
                   className="filled-in"
                   checked={attention}
                   value={attention}
-                  onChange={e => setAttention(!attention)}
+                  onChange={(e) => setAttention(!attention)}
                 />
                 <span>Needs Attention</span>
               </label>
@@ -96,13 +93,13 @@ const AddlogModal = ({ addLog }) => {
   );
 };
 
-AddlogModal.propTypes={
+AddlogModal.propTypes = {
   addLog: PropTypes.func.isRequired,
-}
-
-const modalStyle = {
-  width: "75%",
-  height: "75%"
 };
 
-export default connect(null,{ addLog })(AddlogModal);
+const modalStyle = {
+  width: '75%',
+  height: '75%',
+};
+
+export default connect(null, { addLog })(AddlogModal);

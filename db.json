@@ -1,40 +1,38 @@
 {
   "logs": [
     {
-      "message": "fixed the iMac on statio 19",
-      "tech": "John Doe",
-      "attention": false,
-      "date": "2020-03-25T20:53:17.120Z",
-      "id": 4
-    },
-    {
-      "message": "New PC in house",
+      "message": "Badly damaged monitor",
       "tech": "Irakoze Orchide",
       "attention": true,
-      "date": "2020-03-25T22:31:13.627Z",
-      "id": 5
+      "date": "2020-04-17T09:58:35.896Z",
+      "id": 1
     }
   ],
   "techs": [
-    {
-      "id": 1,
-      "firstName": "John",
-      "lastName": "Doe"
-    },
     {
       "id": 2,
       "firstName": "Sam",
       "lastName": "Smith"
     },
     {
-      "id": 3,
-      "firstName": "John",
-      "lastName": "Lewis"
-    },
-    {
       "firstName": "Irakoze",
       "lastName": "Orchide",
       "id": 4
+    },
+    {
+      "firstName": "Rugumire ",
+      "lastName": "Aaron",
+      "id": 5
+    },
+    {
+      "firstName": "Alec",
+      "lastName": "Mugabo",
+      "id": 7
+    },
+    {
+      "firstName": "Loic",
+      "lastName": "Hirwa",
+      "id": 8
     }
   ]
 }

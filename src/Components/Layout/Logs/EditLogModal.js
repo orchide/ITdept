@@ -1,41 +1,40 @@
-import React, { useState, useEffect } from "react";
+import TechOptions from '../../Layout/TechOptions';
+
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
-import {updateLog} from '../../../Actions/LogActions';
-import M from "materialize-css/dist/js/materialize.min.js";
+import { updateLog } from '../../../Actions/LogActions';
+import M from 'materialize-css/dist/js/materialize.min.js';
 
 const EditLogModal = ({ current, updateLog }) => {
-  const [message, setMessage] = useState("");
+  const [message, setMessage] = useState('');
   const [attention, setAttention] = useState(false);
-  const [tech, setTech] = useState("");
+  const [tech, setTech] = useState('');
 
-  useEffect(() =>{
-    if (current){
-     setMessage(current.message);
-     setAttention(current.attention);
-     setTech(current.tech);
+  useEffect(() => {
+    if (current) {
+      setMessage(current.message);
+      setAttention(current.attention);
+      setTech(current.tech);
     }
-  },[current])
+  }, [current]);
 
   const onSubmit = () => {
-    if (message === "" || tech === "") {
-      M.toast({ html: "Please Enter a message and Tech" });
+    if (message === '' || tech === '') {
+      M.toast({ html: 'Please Enter a message and Tech' });
     } else {
-      
       // console.log(tech, message, attention);
-      const upToDateLog= {
-        id:current.id,
+      const upToDateLog = {
+        id: current.id,
         message,
         attention,
-        tech
-      }
+        tech,
+      };
 
       updateLog(upToDateLog);
       M.toast({ html: `updated by ${tech}` });
 
-
-
-      setMessage("");
-      setTech("");
+      setMessage('');
+      setTech('');
       setAttention(false);
     }
   };
@@ -50,7 +49,7 @@ const EditLogModal = ({ current, updateLog }) => {
               type="text"
               name="message"
               value={message}
-              onChange={e => setMessage(e.target.value)}
+              onChange={(e) => setMessage(e.target.value)}
             />
           </div>
         </div>
@@ -60,15 +59,12 @@ const EditLogModal = ({ current, updateLog }) => {
               name="tech"
               value={tech}
               className="browser-default"
-              onChange={e => setTech(e.target.value)}
+              onChange={(e) => setTech(e.target.value)}
             >
               <option value="" disabled>
                 Select Technician
               </option>
-              <option value="John Doe">John Doe</option>
-              <option value="Sam Smith">Sam Smith</option>
-              <option value="Irakoze Orchide">Irakoze Orchide</option>
-              <option value="John Lewis">John Lewis</option>
+              <TechOptions />
             </select>
           </div>
         </div>
@@ -81,7 +77,7 @@ const EditLogModal = ({ current, updateLog }) => {
                   className="filled-in"
                   checked={attention}
                   value={attention}
-                  onChange={e => setAttention(!attention)}
+                  onChange={(e) => setAttention(!attention)}
                 />
                 <span>Needs Attention</span>
               </label>
@@ -103,14 +99,14 @@ const EditLogModal = ({ current, updateLog }) => {
 };
 
 const modalStyle = {
-  width: "75%",
-  height: "75%"
+  width: '75%',
+  height: '75%',
 };
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
   return {
-    current : state.log.current
-  }
-}
+    current: state.log.current,
+  };
+};
 
-export default connect(mapStateToProps,{ updateLog } ) (EditLogModal);
+export default connect(mapStateToProps, { updateLog })(EditLogModal);
